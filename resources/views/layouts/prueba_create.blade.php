@@ -1,54 +1,48 @@
 @extends("../layouts.app")
 
-
-
-
-
-
-@section("content")
+@section('content')
     <div class="row">
         <div class="col-8">
             <div class="card card-title border-0">
                 <div class="card-body">
-                    <form method="post" action="/esdeveniments/{{$esdeveniment->id}}" enctype="multipart/form-data">
+                    <form method="post" action="/esdeveniments" enctype="multipart/form-data">
                         @csrf
-                        <input type="hidden" name="_method" value="PUT">
                         <div class="form-row">
                             <div class="form-group col">
                                 <label for="titol">Pon un nombre con gancho!</label>
-                                <input type="text" class="form-control" name="titol" value="{{$esdeveniment->titol}}">
+                                <input type="text" class="form-control" name="titol">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col">
                                 <label for="artista">Artista invitado</label>
-                                <input type="text" class="form-control" name="artista" value="{{$esdeveniment->artista}}">
+                                <input type="text" class="form-control" name="artista">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col">
                                 <label for="descripcion">Descripción</label>
-                                <textarea class="form-control" name="descripcion">{{$esdeveniment->descripcion}}</textarea>
+                                <textarea class="form-control" name="descripcion"></textarea>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col">
                                 <label for="diaHora">Fecha y Hora </label>
-                                <input type="datetime-local" class="form-control" name="diaHora" placeholder="AAAA-MM-DD HH:MM" value="{{$esdeveniment->diaHora}}">
+                                <input type="datetime-local" class="form-control" name="diaHora" placeholder="AAAA-MM-DD HH:MM">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col">
                                 <label for="lloc">Lugar del evento</label>
-                                <input type="text" class="form-control" name="lloc" value="{{$esdeveniment->lloc}}">
+                                <input type="text" class="form-control" name="lloc">
                             </div>
                             <div class="form-group col">
                                 <label for="aforament">Aforo</label>
-                                <input type="number" class="form-control" name="aforament" value="{{$esdeveniment->aforament}}">
+                                <input type="number" class="form-control" name="aforament">
                             </div>
                             <div class="form-group col">
                                 <label for="entradas">Entradas a la venta*</label>
-                                <input type="text" class="form-control" name="entradas" value="{{$esdeveniment->entradas}}">
+                                <input type="text" class="form-control" name="entradas">
                             </div>
                         </div>
                         <div class="form-row">
@@ -61,8 +55,8 @@
                                 <div id="info"></div>
                             </div>
                         </div>
-                        <input type="submit" value="Editar Esdeveniment" name="submit">
 
+                        <button type="submit" class="btn btn-primary">Crear</button>
                     </form>
                 </div>
             </div>
@@ -77,6 +71,3 @@
     </script>
 
 @endsection
-
-
-

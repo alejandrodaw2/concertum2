@@ -43,16 +43,7 @@
         @yield("cabecera")
         <a class="navbar-brand" href="/">CONCERTUM</a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse sticky-top navbar-static-top" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/crear">CREAR EVENTO</a>
-                </li>
 
-        </div>
     </nav>
 </header>
 
@@ -73,7 +64,7 @@
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 2020 Copyleft:
-            <a href="https://crowdfunding.com/"> Crowdfunding</a>
+            <a href="https://concertum.com/"> Concertum</a>
         </div>
         <!-- Copyright -->
 

@@ -1,44 +1,30 @@
-@extends("../layouts.plantilla")
-@extends('layouts.app')
-@section("cabecera")
-    LEER REGISTROS
-
-@endsection
-
-@section("contenido")
+@extends("../layouts.app_usuarios")
 
 
-    <table border="1"> <!--esto es un expacio en blanco-->
-        <tr>
-            <td>titol</td>
-            <td>artista</td>
-            <td>descripcion</td>
-            <td>diaHora</td>
-            <td>lloc</td>
-            <td>aforament</td>
-            <td>entradas</td>
-            <td>imagen</td>
+@section("content")
 
-
-
-
-        </tr>
+    <div class="row">
         @foreach($esdeveniments as $esdeveniment)
-            <tr>
-                <td><a href="{{route('esdeveniments.show',$esdeveniment->id)}}">{{$esdeveniment->titol}}</a></td>
-                <td>{{$esdeveniment->artista}}</td>
-                <td>{{$esdeveniment->descripcion}}</td>
-                <td>{{$esdeveniment->diaHora}}</td>
-                <td>{{$esdeveniment->lloc}}</td>
-                <td>{{$esdeveniment->aforament}}</td>
-                <td>{{$esdeveniment->entradas}}</td>
 
-                <td><img src="{{$esdeveniment->path}}"></td>
+            <div class="col-4 m-auto p-3 pl-2" style="padding-left: 10px">
+                <div class="card  "  style="width:300px;">
+                    <img src="{{$esdeveniment->path}}" width="300px" class="card-img-top" alt="...">
+                    <div class="card-body">
+
+                        <h3 class="card-title"><a href="{{route('esdeveniments.show',$esdeveniment->id)}}">{{$esdeveniment->titol}}</a></h3>
+                        <h5 class="card-title">{{$esdeveniment->artista}}</h5>
+                        <h5 class="card-title">{{$esdeveniment->diaHora}}</h5>
+
+                    </div>
+                </div>
+            </div>
 
 
-            </tr>
+
+
+
         @endforeach
-    </table>
+    </div>
 @endsection
 
 
@@ -48,8 +34,4 @@
 
 
 
-
-@section("pie")
-
-@endsection
 

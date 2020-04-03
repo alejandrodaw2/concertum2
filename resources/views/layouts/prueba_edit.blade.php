@@ -1,18 +1,12 @@
 @extends("../layouts.app")
 
-
-
-
-
-
-@section("content")
+@section('content')
     <div class="row">
         <div class="col-8">
             <div class="card card-title border-0">
                 <div class="card-body">
                     <form method="post" action="/esdeveniments/{{$esdeveniment->id}}" enctype="multipart/form-data">
                         @csrf
-                        <input type="hidden" name="_method" value="PUT">
                         <div class="form-row">
                             <div class="form-group col">
                                 <label for="titol">Pon un nombre con gancho!</label>
@@ -77,6 +71,3 @@
     </script>
 
 @endsection
-
-
-

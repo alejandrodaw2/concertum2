@@ -7,14 +7,14 @@
     <div class="row">
         @foreach($esdeveniments as $esdeveniment)
 
-            <div class="col-4 m-auto p-3 pl-2" style="padding-left: 10px">
+            <div class="col-4 m-auto">
                 <div class="card  "  style="width:300px;">
                     <img src="{{$esdeveniment->path}}" width="300px" class="card-img-top" alt="...">
                     <div class="card-body">
-
-                        <h3 class="card-title"><a href="{{route('esdeveniments.show',$esdeveniment->id)}}">{{$esdeveniment->titol}}</a></h3>
-                        <h5 class="card-title">{{$esdeveniment->artista}}</h5>
-                        <h5 class="card-title">{{$esdeveniment->diaHora}}</h5>
+                        7777
+                        <h5 class="card-title"><a href="{{route('esdeveniments.show',$esdeveniment->id)}}">{{$esdeveniment->titol}}</a></h5>
+                        <h3 class="card-title">{{$esdeveniment->artista}}</h3>
+                        <h3 class="card-title">{{$esdeveniment->diaHora}}</h3>
 
                     </div>
                 </div>
@@ -26,6 +26,10 @@
 
         @endforeach
     </div>
+
+
+
+
 @endsection
 
 
@@ -36,3 +40,6 @@
 
 
 
+@section("pie")
+
+@endsection

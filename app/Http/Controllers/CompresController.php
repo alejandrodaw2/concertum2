@@ -40,7 +40,7 @@ class CompresController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -48,31 +48,39 @@ class CompresController extends Controller
         //
 
 
-        $compre=new Compre;
-        $compre->user_id=Auth::user()->id;
-        $compre->esdeveniment_id=$request->esdeveniment_id;
+        $compre = new Compre;
+        $compre->user_id = Auth::user()->id;
+        $compre->esdeveniment_id = $request->esdeveniment_id;
         $compre->save();
 
-        alert('Comfirmacion de compra');
+
         $compre->esdeveniment_id;
-        $esdeveniment=Esdeveniment::findOrFail($compre->esdeveniment_id);
-          $esdeveniment->entradas--;
-          $esdeveniment->save();
+        $esdeveniment = Esdeveniment::findOrFail($compre->esdeveniment_id);
+  /*      $esdeveniment->entradas--;
+        $esdeveniment->save();
 
-          $esdeveniment->id;
-
-
-
-
-        return view("esdeveniments.usuarios_show",compact("esdeveniment"));
+        $esdeveniment->id;*/
 
 
 
 
+if ($esdeveniment->entradas > 0) {
+    $esdeveniment->entradas--;
+    $esdeveniment->save();
+    $request->session()->flash('status', 'La compra se ha realizado correctamente');
 
+    alert('Comfirmacion de compra');
+} else {
+    $request->session()->flash('status', 'Lo sentimos, no quedan entradas.');
+}
+        $esdeveniment->id;
 
-
+ return view("esdeveniments.usuarios_show", compact("esdeveniment"));
     }
+
+
+
+
 
     /**
      * Display the specified resource.
