@@ -86,7 +86,7 @@ if($user->role=='usuario'){
         $esdeveniment->diaHora=$request->diaHora;
         $esdeveniment->lloc=$request->lloc;
         $esdeveniment->aforament=$request->aforament;
-        $esdeveniment->entradas=$request->entradas;
+        $esdeveniment->entradas=$request->aforament;
 
         if($request->file('path') != null) {
             if ($request->file('path')->isValid()) {

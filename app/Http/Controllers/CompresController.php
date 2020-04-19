@@ -69,7 +69,7 @@ if ($esdeveniment->entradas > 0) {
     $esdeveniment->save();
     $request->session()->flash('status', 'La compra se ha realizado correctamente');
 
-    alert('Comfirmacion de compra');
+
 } else {
     $request->session()->flash('status', 'Lo sentimos, no quedan entradas.');
 }

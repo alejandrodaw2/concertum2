@@ -15,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 
 
+Route::get('/manager', function () {
+    return view('home');
+});
+
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();

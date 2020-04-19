@@ -4,12 +4,34 @@
 
 
 @section("content")
-    <!-----------------------------------------------------Modal BORRAR--------------------------------------------->
+    <!-----------------------------------------------------Modal comprar--------------------------------------------->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><i class="fas fa-shopping-cart"></i>Comprar</button>
 
 
+    @if($esdeveniment->entradas == 0)
+    <!---------------------------------------------------Modal Boton----------------------------------------------->
 
-    <!---------------------------------------------------ModalBORRAR----------------------------------------------->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">No se puede realizar la compra</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Tancar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>No queden entrades disponibles per aquest eveniment</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-------------------------------------MODAL BORRAR----------------------------------------------->
+    @else
+    <!---------------------------------------------------Modalcomprar----------------------------------------------->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -20,17 +42,17 @@
                     </button>
                 </div>
                 <div class="modal-body">
-
+                    <p> Codigo y fecha de la compra: codigo {{$esdeveniment->id}} / fecha {{$esdeveniment->created_at}} </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel·lar</button>
+
 
                     <form method="post" action="/compres" enctype="multipart/form-data">
                         @csrf
 
 
                         <input type="hidden" id="esdeveniment_id" name="esdeveniment_id" value="{{$esdeveniment->id}}">
-                        <input type="submit" value="Comprar" name="submit"><br>
+                        <input type="submit" value="Continuar" name="submit"><br>
 
                     </form>
 
@@ -39,27 +61,8 @@
             </div>
         </div>
     </div>
-    <!------------------------------------------------------------------------------------>
-    <!---------------------------------------------------Boton----------------------------------------------->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">No se puede borrar</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Tancar">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Se han vendido entradas no se puede borrar el eveniment</p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-    <!-------------------------------------MODAL BORRAR----------------------------------------------->
+    @endif
+    <!-------------------------------------------cierro Modal----------------------------------------->
 
 
     <div class="row d-flex justify-content-center">

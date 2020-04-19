@@ -4,12 +4,12 @@
 
 @section("content")
 
-    <div class="row">
+    <div class="row ">
         @foreach($esdeveniments as $esdeveniment)
-
-            <div class="col-4 m-auto p-3 pl-2" style="padding-left: 10px">
+            <div class="col-4  flex-column align-items-start">
+            <div class="col-10 mt-3 mb-2 d-flex align-items-start">
                 <div class="card  "  style="width:300px;">
-                    <img src="{{$esdeveniment->path}}" width="300px" class="card-img-top" alt="...">
+                    <img src="{{$esdeveniment->path}}" width="200" height="200"class="card-img-top" alt="...">
                     <div class="card-body">
 
                         <h3 class="card-title"><a href="{{route('esdeveniments.show',$esdeveniment->id)}}">{{$esdeveniment->titol}}</a></h3>
@@ -18,6 +18,7 @@
 
                     </div>
                 </div>
+            </div>
             </div>
 
 

@@ -34,7 +34,7 @@
                         <div class="form-row">
                             <div class="form-group col">
                                 <label for="diaHora">Fecha y Hora </label>
-                                <input type="datetime-local" class="form-control" name="diaHora" placeholder="AAAA-MM-DD HH:MM" value="{{$esdeveniment->diaHora}}">
+                                <input type="text" class="form-control" name="diaHora"  value="{{$esdeveniment->diaHora}}">
                             </div>
                         </div>
                         <div class="form-row">

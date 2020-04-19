@@ -40,10 +40,7 @@
                 <label for="aforament">Aforo</label>
                 <input type="number" class="form-control" name="aforament">
             </div>
-            <div class="form-group col">
-                <label for="entradas">Entradas a la venta*</label>
-                <input type="text" class="form-control" name="entradas">
-            </div>
+
         </div>
         <div class="form-row">
             <div class="form-group col">
